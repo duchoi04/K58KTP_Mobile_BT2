@@ -318,7 +318,11 @@ Truy cập http://camdo.duchoi.io.vn
 
 <img width="1920" height="1080" alt="Screenshot 2026-05-09 004544" src="https://github.com/user-attachments/assets/86fcca0e-7372-49e1-8e7b-5369f00e168a" />
 
+TEST TRÊN THIẾT BỊ KHÁC KHÔNG SỬ DỤNG WIFI
 
+<img width="1179" height="2556" alt="image" src="https://github.com/user-attachments/assets/38ae0f61-8e72-405a-adcf-cd1a7c78dec4" />
+
+<img width="1179" height="2556" alt="image" src="https://github.com/user-attachments/assets/11213119-d985-4d90-8c7e-6dbb346e5668" />
 
 
 
