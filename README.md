@@ -46,6 +46,11 @@ Hướng dẫn:
 - Sau mỗi lần sửa đỏi có thể phải chạy lệnh dạng : docker compose exec TÊN_SERVICE_DJANGO_CỦA_BẠN python manage.py migrate để tác động vào django (còn nhiều lệnh khác chứ ko luôn như này), để django thay đổi csdl hoặc thay đổi cấu hình.
 
                                                      BÀI LÀM
+TỔ CHỨC CSDL CHO HỆ THỐNG QUẢN LÝ TIỆM CẦM ĐỒ
+
+<img width="1920" height="2560" alt="image" src="https://github.com/user-attachments/assets/0b308709-af06-41c9-8ec8-c3e6902d8105" />
+
+
 1: CHUẨN BỊ UBUNTU
 
 Kiểm tra phiên bản Docker docker --version
