@@ -134,7 +134,7 @@ Dockerfile
 
 requirements.txt
 
-9: CẤU HÌNH DATABASE
+8. CẤU HÌNH DATABASE
 
 Bước 1: Mở settings.py nano django_app/core/settings.py
 
@@ -150,7 +150,7 @@ Bước 4: Thêm app -> tìm INSTALLED_APPS -> Thêm 'app_quanly',
 <img width="493" height="202" alt="Screenshot 2026-05-09 230358" src="https://github.com/user-attachments/assets/806f6804-912b-4150-ab5b-2a77964d0b67" />
 
 
-10: TẠO DATABASE MODEl
+9. TẠO DATABASE MODEl
 
 Bước 1: Mở model.py bằng lệnh nano django_app/app_quanly/models.py
 
@@ -164,7 +164,7 @@ Bước 3: Đăng ký model vào admin bằng lệnh nano django_app/app_quanly/
 <img width="721" height="215" alt="Screenshot 2026-05-09 230627" src="https://github.com/user-attachments/assets/d86971ae-e0a7-4793-b2ab-dc828499f17d" />
 
 
-11: TẠO MIGRATION
+10. TẠO MIGRATION
 
 Chạy lệnh: docker compose exec web python manage.py makemigrations
 
@@ -176,7 +176,7 @@ APPLY DATABASE bằng lệnh docker compose exec web python manage.py migrate
 <img width="890" height="612" alt="Screenshot 2026-05-08 231100" src="https://github.com/user-attachments/assets/5ce92d64-8d98-4184-b78f-7700fab99bcb" />
 
 
-12: TẠO SUPERUSER
+11. TẠO SUPERUSER
 
 Chạy lệnh docker compose exec web python manage.py createsuperuser
 
@@ -184,7 +184,7 @@ Chạy lệnh docker compose exec web python manage.py createsuperuser
 
 👉 Thực hiện điền các thông tin username & password
 
-13: CHẠY WEB
+12. CHẠY WEB
 
 Truy cập django admin bằng địa chỉ: http://192.168.1.136:8000/admin
 
@@ -196,7 +196,7 @@ Truy cập django admin bằng địa chỉ: http://192.168.1.136:8000/admin
 <img width="602" height="116" alt="image" src="https://github.com/user-attachments/assets/93f528c6-9101-4b1f-93d0-96fe18d40810" />
 
 
-14: TEST CRUD
+13. TEST CRUD
 
 Bước 1: Thêm dữ liệu
 
@@ -208,7 +208,7 @@ Thêm hợp đồng
 
 <img width="1920" height="1080" alt="Screenshot 2026-05-09 220951" src="https://github.com/user-attachments/assets/7766b37d-250a-4206-88ac-d8917962d409" />
 
-15: TEST PHPMYADMIN
+14. TEST PHPMYADMIN
 
 Truy cập địa chỉ http://192.168.1.136:8081
 
@@ -240,7 +240,7 @@ Deadline trả nợ
 
 Trạng thái đã trả/chưa trả
 
-16: TẠO TEMPLATE HTML
+15. TẠO TEMPLATE HTML
 
 Bước 1: Tạo thư mục template mkdir -p django_app/app_quanly/templates
 
@@ -261,14 +261,14 @@ Bước 5: Tạo file urls.py nano django_app/app_quanly/urls.py
 <img width="693" height="192" alt="Screenshot 2026-05-09 222206" src="https://github.com/user-attachments/assets/03bef6fa-459d-468e-b121-b667d9ca4ae9" />
 
 
-17: TEST WEB
+16: TEST WEB
 
 Truy cập địa chỉ 'http://192.168.1.136:8000/`
 
 <img width="1920" height="1080" alt="Screenshot 2026-05-09 004535" src="https://github.com/user-attachments/assets/e8757dad-1a61-4a5c-8149-264c10b93d0b" />
 
 
-18: PUBLIC DJANGO LÊN SUBDOMAIN BẰNG CLOUDFLARE TUNNEL
+17: PUBLIC DJANGO LÊN SUBDOMAIN BẰNG CLOUDFLARE TUNNEL
 
 Bước 1: Dowload claudfare tunnel bằng lệnh wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
 
@@ -280,7 +280,7 @@ Bước 3: Kiểm tra cloudflared --version
 
 <img width="1920" height="1080" alt="Screenshot 2026-05-09 000013" src="https://github.com/user-attachments/assets/f4de2bf0-58a9-42bd-af09-a73da0e0c1ab" />
 
-19: LOGIN CLOUDFLARE
+18: LOGIN CLOUDFLARE
 
 Chạy lệnh 'cloudflared tunnel login` sẽ sinh ra 1 địa chỉ để login vào claudfare tunnel
 
@@ -297,7 +297,7 @@ Chọn đúng domain -> Chọn Authorize
 <img width="1318" height="177" alt="Screenshot 2026-05-09 002807" src="https://github.com/user-attachments/assets/04c7eb08-687f-4c95-b78f-59530dd0db7b" />
 
 
-20: TẠO TUNNEL
+19: TẠO TUNNEL
 
 Chạy lệnh: cloudflared tunnel create camdo-tunnel sẽ ra 1 dãy id
 
@@ -310,7 +310,7 @@ Thêm nội dung sau ( Vì dùng chung đường hầm với web cũ nên không
 
 <img width="1920" height="1080" alt="Screenshot 2026-05-09 003749" src="https://github.com/user-attachments/assets/e91e27a3-473b-4ae8-a436-eabc86742872" />
 
-21: CHẠY TUNNEL
+20: CHẠY TUNNEL
 
 Chạy lệnh cloudflared tunnel run camdo-tunnel
 
