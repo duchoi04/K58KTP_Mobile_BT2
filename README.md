@@ -234,6 +234,7 @@ Truy cập địa chỉ http://IP_UBUNTU:8888
 Kiểm tra các bảng
 
 a) Bảng khách hàng
+<img width="1920" height="1080" alt="Screenshot 2026-05-09 001253" src="https://github.com/user-attachments/assets/2e6d0252-503a-46d1-8376-1cc047671172" />
 
 
 Bảng management_khachhang dùng để lưu thông tin khách hàng:
@@ -254,7 +255,8 @@ id
 
 b) Bảng giao dịch
 
-{F57847B3-F13B-4651-B077-E455C71635BC}
+<img width="1920" height="1080" alt="Screenshot 2026-05-09 001248" src="https://github.com/user-attachments/assets/6cd1ada1-5be1-46e6-8a38-d4b349d78049" />
+
 
 Bảng management_giaodich dùng để quản lý:
 
@@ -266,106 +268,95 @@ Số tiền vay
 
 Deadline trả nợ
 
-Lãi suất
-
 Trạng thái đã trả/chưa trả
 
-Foreign Key:
-
-khach_hang_id
-
-chi_tiet_tai_san_id
-
-Database thực tế lưu ID khóa ngoại thay vì text.
-
-{7A7C3940-E3EC-4557-BD5A-85D5E675A78C}
-
-c) Bảng Mô tả tài sản
-
-{A18F0037-4DA6-4C50-BFC3-7C384E6DB141}
-
-Bảng management_motataisan dùng để lưu mô tả chi tiết tài sản thế chấp.
-
-Khóa chính:
-
-id
-{277F16E4-F2E9-46F9-B512-93E8EADE933E}
-
-d) Kiểm chứng Foreign Key
-
-Trong Django Admin người dùng chọn bằng tên,
-
-nhưng trong MariaDB hệ thống lưu bằng ID khóa ngoại.
-
-Ví dụ:
-
-khach_hang_id = 1
-chi_tiet_tai_san_id = 1
-{2CEB0188-AB8E-4850-A628-A0171B425662}
-
 16: TẠO TEMPLATE HTML
+
 Bước 1: Tạo thư mục template mkdir -p django/management/templates
 
 Bước 2: Tạo file home.html nano django/management/templates/home.html
 
 Bước 3: Thêm nội dung
 
-{5976C949-B8AA-4640-BEBA-DAFB1E7E6559}
+<img width="1581" height="929" alt="Screenshot 2026-05-09 221958" src="https://github.com/user-attachments/assets/8a8cbb82-daea-479c-ba4d-286e30b359e4" />
+
 
 Bước 4: Tạo file views.py nano django/management/views.py
-{73596296-700A-4F23-B51F-232CE9D428F7}
+
+<img width="675" height="231" alt="Screenshot 2026-05-09 222129" src="https://github.com/user-attachments/assets/cfaf6623-356a-4de8-90f4-7e7e978aeb72" />
+
 
 Bước 5: Tạo file urls.py nano django/pawnshop/urls.py
-{842DF8CC-CC9D-4896-9D3C-3AB791B4BF53}
+
+<img width="693" height="192" alt="Screenshot 2026-05-09 222206" src="https://github.com/user-attachments/assets/03bef6fa-459d-468e-b121-b667d9ca4ae9" />
+
 
 17: TEST WEB
-Truy cập địa chỉ 'http://<ip_ubuntu>:8000/`
-{50C5AA8C-E753-4E64-A331-C358D3D4D7E3}
+
+Truy cập địa chỉ 'http://192.168.1.136:8000/`
+
+<img width="1920" height="1080" alt="Screenshot 2026-05-09 004535" src="https://github.com/user-attachments/assets/e8757dad-1a61-4a5c-8149-264c10b93d0b" />
+
 
 18: PUBLIC DJANGO LÊN SUBDOMAIN BẰNG CLOUDFLARE TUNNEL
+
 Bước 1: Dowload claudfare tunnel bằng lệnh wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
-image
+
+<img width="1920" height="1080" alt="Screenshot 2026-05-08 235932" src="https://github.com/user-attachments/assets/de1da6c3-5905-4abe-a71b-116a73e4286d" />
+
 
 Bước 2: Cài đặt sudo dpkg -i cloudflared-linux-amd64.deb
 
+
 Bước 3: Kiểm tra cloudflared --version
 
-{810FF189-36A5-4CC8-8F51-A17ABC56EBE5}
+<img width="1920" height="1080" alt="Screenshot 2026-05-09 000013" src="https://github.com/user-attachments/assets/f4de2bf0-58a9-42bd-af09-a73da0e0c1ab" />
+
 
 19: LOGIN CLOUDFLARE
+
 Chạy lệnh 'cloudflared tunnel login` sẽ sinh ra 1 địa chỉ để login vào claudfare tunnel
 
 Truy cập địa chỉ đó trên trình duyệt
 
-{CA1C8789-0390-475A-A8D8-DBF4E66E441D}
+<img width="1829" height="170" alt="Screenshot 2026-05-09 002659" src="https://github.com/user-attachments/assets/549147cb-4ff5-4ff5-a575-07fb6f9e903c" />
+
 
 Chọn đúng domain -> Chọn Authorize
-{4A182B01-1A62-4CB8-BEFD-27E95C016FF4}
 
 👉 Sau khi click sẽ hiện thông báo đồng thời trên ubuntu cũng thông báo You have successfully logged in và sinh ra file .pem
 
-image
+<img width="1920" height="1080" alt="Screenshot 2026-05-09 002735" src="https://github.com/user-attachments/assets/a4db50a6-d08c-4299-a6ba-1c99712b9df5" />
 
-{581C8B6F-168F-43BA-B53E-A033F9BB80EE}
+<img width="1318" height="177" alt="Screenshot 2026-05-09 002807" src="https://github.com/user-attachments/assets/04c7eb08-687f-4c95-b78f-59530dd0db7b" />
+
 
 20: TẠO TUNNEL
+
 Chạy lệnh: cloudflared tunnel create camdo-tunnel sẽ ra 1 dãy id
-{C8CE2927-5BEA-4EB0-A962-4894914EA46A}
+
+<img width="1734" height="153" alt="Screenshot 2026-05-09 002848" src="https://github.com/user-attachments/assets/9b39cf9d-c76c-4630-8d86-9d209e21742a" />
+
 
 Tạo file config.yml bằng lệnh nano ~/.cloudflared/config.yml
-{366841DA-4FB7-4FFB-AFF4-EAA9EF845C75}
 
 Thêm nội dung sau ( Vì dùng chung đường hầm với web cũ nên không cần thêm id, có thể dùng chung ip với web cũ)
-{C3765F71-80C9-41AE-9A3B-260C458973CB}
+
+<img width="1920" height="1080" alt="Screenshot 2026-05-09 003749" src="https://github.com/user-attachments/assets/e91e27a3-473b-4ae8-a436-eabc86742872" />
 
 21: CHẠY TUNNEL
+
 Chạy lệnh cloudflared tunnel run camdo-tunnel
-{78CE7D21-BF3A-4AE4-B399-CFFC0FCC4E9A}
 
-Truy cập http://camdo.ducduong.id.vn
-{B978C107-B9F9-4303-8BAF-955C9C19EA54}
+<img width="1920" height="1080" alt="Screenshot 2026-05-09 003729" src="https://github.com/user-attachments/assets/b060192d-a01b-4704-8bcc-6c2674e9cf13" />
 
-👉 Sau khi truy cập domain -> login bằng tài khoản admin -> có thể tiến hành ( thêm + sửa + xoá ) -> có thể quản lý bằng cách "xem danh sách con nợ"
+
+Truy cập http://camdo.duchoi.io.vn
+
+<img width="1920" height="1080" alt="Screenshot 2026-05-09 223656" src="https://github.com/user-attachments/assets/2d869afc-0b01-4232-9b6a-798300b9a029" />
+
+<img width="1920" height="1080" alt="Screenshot 2026-05-09 004544" src="https://github.com/user-attachments/assets/86fcca0e-7372-49e1-8e7b-5369f00e168a" />
+
 
 
 
