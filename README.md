@@ -69,11 +69,9 @@ Kiểm tra phiên bản Docker Compose docker compose version
 
 Bước 1: Tạo thư mục mkdir camdo_project
 
-
 Bước 2: Vào thư mục cd camdo_project
 
-<img width="1077" height="635" alt="Screenshot 2026-05-08 213842" src="https://github.com/user-attachments/assets/f441f09b-2ff2-4be2-ba31-db4b62b00cc2" />
-
+<img width="668" height="152" alt="Screenshot 2026-05-08 225042" src="https://github.com/user-attachments/assets/fa275020-e592-45ab-b7b0-375966c0540f" />
 
 Bước 3: Tạo thư mục django trong camdo_project
 
@@ -94,9 +92,7 @@ Bước 3: Thêm nội dung cho File dockerfile
 
 Bước 1: Tạo file requirements.txt nano requirements.txt
 
-
 Bước 2: Dán nội dung sau
-
 
 <img width="1920" height="1080" alt="Screenshot 2026-05-08 214337" src="https://github.com/user-attachments/assets/f84a7a17-222c-4aeb-9cb0-6d4a27a65c0d" />
 
@@ -105,7 +101,6 @@ Bước 2: Dán nội dung sau
 Bước 1: Quay lại thư mục gốc cd ..
 
 Bước 2: Tạo file docker - compose.yml nano docker-compose.yml
-
 
 Bước 3: Dán nội dung sau
 
@@ -134,20 +129,15 @@ Bước 2: Kiểm tra file ls django
 
 <img width="1920" height="1080" alt="Screenshot 2026-05-08 230138" src="https://github.com/user-attachments/assets/95487d02-0fa0-48ef-9a77-c60e72967f8d" />
 
-👉 Kết quả phải thấy
-
+👉 Kết quả phải thấy:
 
 manage.py
 
-
-pawnshop
-
+core
 
 Dockerfile
 
-
 requirements.txt
-
 
 9: CẤU HÌNH DATABASE
 
@@ -160,50 +150,48 @@ Bước 3: Tìm đến và sửa thành như sau
 <img width="594" height="378" alt="Screenshot 2026-05-09 215839" src="https://github.com/user-attachments/assets/12d7eca6-1b93-4bdb-a450-fe0472351fbd" />
 
 
-Bước 4: Thêm app -> tìm INSTALLED_APPS -> Thêm '',
+Bước 4: Thêm app -> tìm INSTALLED_APPS -> Thêm 'app_quanly',
 
 <img width="493" height="202" alt="Screenshot 2026-05-09 230358" src="https://github.com/user-attachments/assets/806f6804-912b-4150-ab5b-2a77964d0b67" />
 
 
 10: TẠO DATABASE MODEl
 
-Bước 1: Mở model.py bằng lệnh nano django/management/models.py
+Bước 1: Mở model.py bằng lệnh nano django_app/app_quanly/models.py
 
 Bước 2: Thêm nội dung
 
 <img width="978" height="386" alt="Screenshot 2026-05-09 230523" src="https://github.com/user-attachments/assets/1905d25e-5ccb-4ea3-afae-1fab03a31bef" />
 
 
-Bước 3: Đăng ký model vào admin bằng lệnh nano django/management/admin.py
+Bước 3: Đăng ký model vào admin bằng lệnh nano django_app/app_quanly/admin.py
 
 <img width="721" height="215" alt="Screenshot 2026-05-09 230627" src="https://github.com/user-attachments/assets/d86971ae-e0a7-4793-b2ab-dc828499f17d" />
 
 
 11: TẠO MIGRATION
 
-Chạy lệnh: docker compose exec django python manage.py makemigrations
+Chạy lệnh: docker compose exec web python manage.py makemigrations
 
 <img width="1920" height="1080" alt="Screenshot 2026-05-08 233747" src="https://github.com/user-attachments/assets/aad31f2d-94ea-41ae-9257-065e55f57693" />
 
 
-
-APPLY DATABASE bằng lệnh docker compose exec django python manage.py migrate
+APPLY DATABASE bằng lệnh docker compose exec web python manage.py migrate
 
 <img width="890" height="612" alt="Screenshot 2026-05-08 231100" src="https://github.com/user-attachments/assets/5ce92d64-8d98-4184-b78f-7700fab99bcb" />
 
 
 12: TẠO SUPERUSER
 
-Chạy lệnh docker compose exec django python manage.py createsuperuser
+Chạy lệnh docker compose exec web python manage.py createsuperuser
 
 <img width="1920" height="1080" alt="Screenshot 2026-05-08 231243" src="https://github.com/user-attachments/assets/662004e6-24fc-40be-b514-4a51dc7a2c41" />
-
 
 👉 Thực hiện điền các thông tin username & password
 
 13: CHẠY WEB
 
-Truy cập django admin bằng địa chỉ: http://IP_UBUNTU:8000/admin
+Truy cập django admin bằng địa chỉ: http://192.168.1.136:8000/admin
 
 <img width="1920" height="1080" alt="Screenshot 2026-05-08 233833" src="https://github.com/user-attachments/assets/5b4aa30c-adad-436c-a418-71de8f456a75" />
 
@@ -221,44 +209,31 @@ Thêm khách hàng
 
 <img width="1188" height="996" alt="Screenshot 2026-05-09 221118" src="https://github.com/user-attachments/assets/04df79f8-afd2-4580-b465-90fce0386f2c" />
 
-Thêm Giao dịch
+Thêm hợp đồng
 
 <img width="1920" height="1080" alt="Screenshot 2026-05-09 220951" src="https://github.com/user-attachments/assets/7766b37d-250a-4206-88ac-d8917962d409" />
 
 15: TEST PHPMYADMIN
 
-Truy cập địa chỉ http://IP_UBUNTU:8888
-
-
+Truy cập địa chỉ http://192.168.1.136:8081
 
 Kiểm tra các bảng
 
 a) Bảng khách hàng
+
 <img width="1920" height="1080" alt="Screenshot 2026-05-09 001253" src="https://github.com/user-attachments/assets/2e6d0252-503a-46d1-8376-1cc047671172" />
 
-
-Bảng management_khachhang dùng để lưu thông tin khách hàng:
+Bảng app_quanly_khachhang dùng để lưu thông tin khách hàng:
 
 Tên khách hàng
 
-CCCD
-
-Địa chỉ
-
 Số điện thoại
 
-Khóa chính (Primary Key):
-
-id
-
-{A88A45EB-F1ED-4B42-BFEA-FDA83C88C432}
-
-b) Bảng giao dịch
+b) Bảng hợp đồng
 
 <img width="1920" height="1080" alt="Screenshot 2026-05-09 001248" src="https://github.com/user-attachments/assets/6cd1ada1-5be1-46e6-8a38-d4b349d78049" />
 
-
-Bảng management_giaodich dùng để quản lý:
+Bảng app_quanly_hopdong dùng để quản lý:
 
 Khách hàng cầm đồ
 
@@ -272,21 +247,21 @@ Trạng thái đã trả/chưa trả
 
 16: TẠO TEMPLATE HTML
 
-Bước 1: Tạo thư mục template mkdir -p django/management/templates
+Bước 1: Tạo thư mục template mkdir -p django_app/app_quanly/templates
 
-Bước 2: Tạo file home.html nano django/management/templates/home.html
+Bước 2: Tạo file home.html nano django_app/app_quanly/templates/home.html
 
 Bước 3: Thêm nội dung
 
 <img width="1581" height="929" alt="Screenshot 2026-05-09 221958" src="https://github.com/user-attachments/assets/8a8cbb82-daea-479c-ba4d-286e30b359e4" />
 
 
-Bước 4: Tạo file views.py nano django/management/views.py
+Bước 4: Tạo file views.py nano django_app/app_quanly/views.py
 
 <img width="675" height="231" alt="Screenshot 2026-05-09 222129" src="https://github.com/user-attachments/assets/cfaf6623-356a-4de8-90f4-7e7e978aeb72" />
 
 
-Bước 5: Tạo file urls.py nano django/pawnshop/urls.py
+Bước 5: Tạo file urls.py nano django_app/app_quanly/urls.py
 
 <img width="693" height="192" alt="Screenshot 2026-05-09 222206" src="https://github.com/user-attachments/assets/03bef6fa-459d-468e-b121-b667d9ca4ae9" />
 
@@ -304,14 +279,11 @@ Bước 1: Dowload claudfare tunnel bằng lệnh wget https://github.com/cloudf
 
 <img width="1920" height="1080" alt="Screenshot 2026-05-08 235932" src="https://github.com/user-attachments/assets/de1da6c3-5905-4abe-a71b-116a73e4286d" />
 
-
 Bước 2: Cài đặt sudo dpkg -i cloudflared-linux-amd64.deb
-
 
 Bước 3: Kiểm tra cloudflared --version
 
 <img width="1920" height="1080" alt="Screenshot 2026-05-09 000013" src="https://github.com/user-attachments/assets/f4de2bf0-58a9-42bd-af09-a73da0e0c1ab" />
-
 
 19: LOGIN CLOUDFLARE
 
@@ -320,7 +292,6 @@ Chạy lệnh 'cloudflared tunnel login` sẽ sinh ra 1 địa chỉ để login
 Truy cập địa chỉ đó trên trình duyệt
 
 <img width="1829" height="170" alt="Screenshot 2026-05-09 002659" src="https://github.com/user-attachments/assets/549147cb-4ff5-4ff5-a575-07fb6f9e903c" />
-
 
 Chọn đúng domain -> Chọn Authorize
 
